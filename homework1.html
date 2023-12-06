@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .w3-top {
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            margin-bottom: 50px;
+        }
+        body {
+            padding-top: 40px;
+        }
+
+  body {
+        background-image: linear-gradient(
+            180deg,
+            #0c0c0c 3%,
+            #605e5e70 40%,
+            rgba(117, 112, 112, 0.439) 100%
+          ),
+          url(https://i.pinimg.com/originals/7f/17/32/7f1732afaa7327acfdf93a458f4fc827.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        
+      }
+        
+        .hero {
+            margin-top: 10%;
+            justify-content: center;
+            align-items: center;
+            & .col-md-6 {
+                text-align: center;
+               
+            }
+            & h1 {
+                font-size: 3rem;
+                color: rgb(0, 0, 0);
+            }
+            & h4 {
+                font-size: 25px;
+                font-weight: bold;
+                color: rgba(0, 0, 0, 0);
+            }
+            & a {
+                font-weight: bold;
+            }
+            & img {
+                shape-image-threshold: 1px;
+                border-radius: 25% 25%;
+                box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            }
+        }
+        
+        
+        #section3 {
+            height: 10vh;
+        }
+        
+        @media (max-width: 768px) {
+            img {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
+        
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+        
+        
+        
+        .navbar-white .navbar-toggler-icon {
+            background-color: #faf9f9;
+            /* ตั้งค่าสีตัว hamburger icon */
+        }
+        
+        .navbar-white .navbar-nav .nav-link {
+            color: #000 !important;
+        
+        }
+    </style>
+
+    </style>
+</head>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="profine.html" class="w3-bar-item w3-button">profile</a>
+      <a href="java.html" class="w3-bar-item w3-button">Java</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+      <a href="api.html" class="w3-bar-item w3-button">API</a>
+      <a href="homework1.html" class="w3-bar-item w3-button">HOMEWORK</a>
+    </div>
+</div>
+</div>
+
+    <div>
+        <h1>home</h1>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+    <hr>
+    <div>
+       <h1>home1</h1>
+       <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+    </div>
+
+<script>
+    const bValues = [];
+    const eValues = [];
+    generateData("Math.sin(x)", 0, 10, 0.5);
+    
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: bValues,
+        datasets: [{
+          fill: false,
+          pointRadius: 2,
+          borderColor: "rgba(0,0,255,0.5)",
+          data: eValues
+        }]
+      },    
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "y = sin(x)",
+          fontSize: 16
+        }
+      }
+    });
+    function generateData(value, i1, i2, step = 1) {
+      for (let x = i1; x <= i2; x += step) {
+        bValues.push(eval(value));
+        eValues.push(x);
+      }
+    }
+    </script>
+    <hr>
+    <script>
+        const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        const yValues = [55, 49, 44, 24, 15];
+        const barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#e8c3b9",
+          "#1e7145"
+        ];
+        
+        new Chart("myChart2", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "World Wide Wine Production 2018"
+            }
+          }
+        });
+        </script>
+
+<form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbyoWafm0mNRVphiezDR5on6G0FlVXWR94u4rgh6foPuRaUFR5tSj-oCZaQozvig0BD0/exec"
+>
+  <input Name="Email" type="email" placeholder="Email" required>
+  <input Name="Name" type="text" placeholder="Name" required>
+  <button type="submit">Send</button>
+</form>
+
+</body>
+</html>

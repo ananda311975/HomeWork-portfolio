@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+
+body {
+        background-image: linear-gradient(
+            180deg,
+            #0c0c0c 3%,
+            #605e5e70 40%,
+            rgba(117, 112, 112, 0.439) 100%
+          ),
+          url(https://i.pinimg.com/originals/7f/17/32/7f1732afaa7327acfdf93a458f4fc827.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        
+      }
+</style>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="profine.html" class="w3-bar-item w3-button">profile</a>
+      <a href="java.html" class="w3-bar-item w3-button">Java</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+      <a href="api.html" class="w3-bar-item w3-button">API</a>
+      <a href="homework1.html" class="w3-bar-item w3-button">HOMEWORK</a>
+    </div>
+</div>
+</div>
+<!-- Page content -->
+<div class="w3-content w3-padding-64 w3-margin-top" style="max-width:1564px">
+
+<h1>The Document Object</h1>
+
+
+<h2>Just change A - Z</h2>
+<p id="demo">Hi</p>
+
+
+<h2>Click to change</h2>
+<p id="demo2">Hi</p>
+<button onclick="myFunction()">Click me</button>
+
+
+<h2>Calculate number</h2>
+<input id="numb">
+<button type="button" onclick="myFunction2()">Submit</button>
+<p id="demo3"></p>
+
+<!-- End page content -->
+</div>
+
+<script>
+  //document.getElementById("demo").innerHTML = "Hello World";
+
+  function printAlphabets() {
+  // สร้างตัวแปรเพื่อเก็บตัวอักษร A-Z
+  const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  // ใช้ forEach เพื่อวนลูปผ่านทุกตัวอักษร
+  alphabets.split('').forEach((alphabet, index) => {
+    // ใช้ setTimeout เพื่อกำหนดระยะเวลาการแสดงผล
+    setTimeout(() => {
+      document.getElementById("demo").innerHTML = alphabet;
+      console.log(alphabet);
+    }, index * 1000); // 1000 milliseconds = 1 วินาที
+  });
+}
+printAlphabets();
+
+  function myFunction() {
+    document.getElementById("demo2").innerHTML = "Hello World";
+}
+
+  function myFunction2() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("numb").value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo3").innerHTML = text;
+}
+
+
+</script>
+
+</body>
+</html>

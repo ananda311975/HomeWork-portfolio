@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<style>
+body {
+        background-image: linear-gradient(
+            180deg,
+            #0c0c0c 3%,
+            #605e5e70 40%,
+            rgba(117, 112, 112, 0.439) 100%
+          ),
+          url(https://i.pinimg.com/originals/7f/17/32/7f1732afaa7327acfdf93a458f4fc827.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        
+      }
+</style>
+<body>
+<div>
+  <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+</div>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="index.html" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+
+      <div class="w3-right w3-hide-small">
+        <a href="profine.html" class="w3-bar-item w3-button">profile</a>
+        <a href="java.html" class="w3-bar-item w3-button">Java</a>
+        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+        <a href="api.html" class="w3-bar-item w3-button">API</a>
+        <a href="homework1.html" class="w3-bar-item w3-button">HOMEWORK</a>
+
+      </div>
+  </div>
+</div>
+
+<div>
+
+  <canvas id="myChart"></canvas>
+
+</div>
+</div>
+
+<div class="w3-content w3-padding-64 w3-margin-top" style="max-width:1564px">
+
+<h1>API</h1>
+<h2>Click to change</h2>
+<p id="demo2">Hi</p>
+<button onclick="myFunction()">Click me</button>
+
+</div>
+
+
+<script>
+  function myFunction() {
+    fetch("https://catfact.ninja/fact")
+      .then(function(response){
+        return response.json()
+      })
+      .then(function(data){
+        let txt = "";
+          for (let x in data) {
+            txt += data[x] + " ";
+          document.getElementById("demo2").innerHTML = txt;
+          };
+        return data;
+      })  
+}
+const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+  const yValues = [55, 49, 44, 24, 15];
+  const barColors = ["red", "green","blue","orange","brown"];
+  new Chart("myChart", {
+    type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: "World Wine Production 2018"
+      }
+    }
+  });
+
+</script>
+
+
+</body>
+</html>
